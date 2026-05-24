@@ -1,25 +1,105 @@
-name: Feature request
-description: Suggest an idea for containerd
-labels: kind/feature
+name: Feature Request
+description: Suggest a new feature or enhancement for containerd
+title: "[FEATURE] "
+labels: ["kind/feature", "needs-triage"]
 body:
-  - type: textarea
+  - type: markdown
     attributes:
-      label: What is the problem you're trying to solve
-      description: |
-        A clear and concise description of what the problem is.
+      value: |
+        Thank you for taking the time to suggest a feature!
+        Please fill out this form as completely as possible.
+
+  - type: checkboxes
+    id: prerequisites
+    attributes:
+      label: Prerequisites
+      description: Please confirm the following before submitting.
+      options:
+        - label: I have searched existing issues and this feature has not been requested before.
+          required: true
+        - label: I have read the [contributing guidelines](https://github.com/containerd/containerd/blob/main/CONTRIBUTING.md).
+          required: true
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: Feature Summary
+      description: A clear and concise description of the feature you are requesting.
+      placeholder: Describe the feature...
     validations:
       required: true
 
   - type: textarea
+    id: motivation
     attributes:
-      label: Describe the solution you'd like
+      label: Motivation and Use Case
       description: |
-        A clear and concise description of what you'd like to happen.
+        Why is this feature needed? What problem does it solve?
+        Please describe the use case(s) that would benefit from this feature.
+      placeholder: Explain the motivation and use cases...
     validations:
       required: true
 
   - type: textarea
+    id: proposed_solution
     attributes:
-      label: Additional context
+      label: Proposed Solution
       description: |
-        Add any other context about the feature request here.
+        Describe the solution you would like to see implemented.
+        Include any API changes, configuration options, or behavioral changes.
+      placeholder: Describe your proposed solution...
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives Considered
+      description: |
+        Have you considered any alternative solutions or workarounds?
+        If so, please describe them and explain why they are insufficient.
+      placeholder: Describe any alternatives you have considered...
+    validations:
+      required: false
+
+  - type: dropdown
+    id: component
+    attributes:
+      label: Affected Component
+      description: Which component(s) of containerd does this feature relate to?
+      multiple: true
+      options:
+        - Core Runtime
+        - CRI Plugin
+        - Snapshotter
+        - Content Store
+        - Images
+        - Containers
+        - Tasks / Processes
+        - Networking
+        - Namespaces
+        - Events
+        - Metrics
+        - CLI (ctr)
+        - Client Library
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional_context
+    attributes:
+      label: Additional Context
+      description: |
+        Add any other context, screenshots, or references about the feature request here.
+        Links to related issues, PRs, or external resources are welcome.
+      placeholder: Any additional context...
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: contribution
+    attributes:
+      label: Contribution
+      options:
+        - label: I am willing to submit a pull request to implement this feature.
