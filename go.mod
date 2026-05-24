@@ -57,3 +57,6 @@ require (
 	google.golang.org/genproto/googleapis/rpc v0.0.0-20240314234333-4f3b4589e9a0 // indirect
 	k8s.io/apimachinery v0.29.3 // indirect
 )
+
+// personal fork - bumping golang.org/x/net to address CVE-2023-44487 (HTTP/2 rapid reset)
+replace golang.org/x/net => golang.org/x/net v0.23.0
