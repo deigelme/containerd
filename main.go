@@ -26,6 +26,8 @@ import (
 func main() {
 	app := command.App()
 	if err := app.Run(os.Args); err != nil {
+		// Print error to stderr with a clear prefix and exit with a non-zero status.
+		// Using exit code 1 for all errors to keep it simple for scripting purposes.
 		fmt.Fprintf(os.Stderr, "containerd: %s\n", err)
 		os.Exit(1)
 	}
