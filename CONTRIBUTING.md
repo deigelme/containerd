@@ -92,6 +92,9 @@ sudo make integration
 
 # Specific package tests
 go test ./pkg/...
+
+# Run a single test by name (useful during development)
+go test -run TestFunctionName ./path/to/package/...
 ```
 
 ### Code Style
@@ -113,5 +116,4 @@ Reviewers will look for:
 
 ## License
 
-By contributing, you agree that your contributions will be licensed under the
-[Apache 2.0 License](LICENSE).
+By contributing, you agree that yo
